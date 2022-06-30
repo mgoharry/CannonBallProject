@@ -26,12 +26,9 @@ public class CannonController : MonoBehaviour
     void Update()
     {
         float LookX = Input.GetAxis("Mouse X");
-        //LookX = Mathf.Clamp(LookX, -90, 90);
+       
         float LookY = Input.GetAxis("Mouse Y") * sensetivityY * Time.deltaTime;
 
-        Debug.Log(LookY);
-
-        //LookY = Mathf.Clamp(LookY, -140, -70);
 
         CannonHead.transform.rotation = Quaternion.Euler(CannonHead.transform.rotation.eulerAngles + new Vector3(LookY , 0, 0));
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, LookX * sensetivityX * Time.deltaTime, 0));
